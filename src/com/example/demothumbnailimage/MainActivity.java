@@ -4,6 +4,7 @@ import java.io.InputStream;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -21,16 +22,16 @@ public class MainActivity extends Activity {
 	}
 
 	public void onThumbnailClick(View v) {
-		final AlertDialog dialog = new AlertDialog.Builder(this).create();
-		ImageView imgView = getView();
-		dialog.setView(imgView);
-		dialog.show();
+//		final AlertDialog dialog = new AlertDialog.Builder(this).create();
+//		ImageView imgView = getView();
+//		dialog.setView(imgView);
+//		dialog.show();
 
 		// 全屏显示的方法
-		// final Dialog dialog = new Dialog(this, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
-		// ImageView imgView = getView();
-		// dialog.setContentView(imgView);
-		// dialog.show();
+		 final Dialog dialog = new Dialog(this, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
+		 ImageView imgView = getView();
+		 dialog.setContentView(imgView);
+		 dialog.show();
 
 		// 点击图片消失
 		imgView.setOnClickListener(new OnClickListener() {
@@ -44,7 +45,7 @@ public class MainActivity extends Activity {
 
 	private ImageView getView() {
 		ImageView imgView = new ImageView(this);
-		imgView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+		imgView.setLayoutParams(new LayoutParams(500, 600));
 
 		InputStream is = getResources().openRawResource(R.drawable.pic);
 		Drawable drawable = BitmapDrawable.createFromStream(is, null);
