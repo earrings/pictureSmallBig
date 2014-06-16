@@ -45,7 +45,7 @@ public class MainActivity extends Activity {
 
 	private ImageView getView() {
 		ImageView imgView = new ImageView(this);
-		imgView.setLayoutParams(new LayoutParams(500, 600));
+		imgView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 
 		InputStream is = getResources().openRawResource(R.drawable.pic);
 		Drawable drawable = BitmapDrawable.createFromStream(is, null);
